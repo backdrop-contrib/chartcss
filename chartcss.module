@@ -6,7 +6,7 @@
 
 function chartcss_preprocess(&$vars, $hook) {    
   if($hook == 'page')    
-   backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/chart.min.css');
+   backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
 }
 
 /**
@@ -23,5 +23,5 @@ function chartcss_menu() {
 }
 
 function chartcss_preprocess_html(&$variables) {
-  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/chart.min.css');
+  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
 }
