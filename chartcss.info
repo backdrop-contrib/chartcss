@@ -1,0 +1,6 @@
+name = ChartCSS Framework
+description = Easily create charts and graphs with a CSS framework.
+backdrop = 1.x
+type = module
+version = 1.0.0
+stylesheets[all][] = css/chart.min.css

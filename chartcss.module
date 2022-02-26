@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Easily create charts and graphs with a CSS framework.
+ */
+
+function chartcss_preprocess(&$vars, $hook) {    
+  if($hook == 'page')    
+   backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/chart.min.css');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function chartcss_menu() {
+  $items['chartcss'] = array(
+    'title' => 'ChartCSS Help',
+    'description' => 'Help for ChartCSS framework',
+    'page callback' => '/admin/chartcss',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function chartcss_preprocess_html(&$variables) {
+  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/chart.min.css');
+}

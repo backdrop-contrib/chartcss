@@ -1,68 +1,38 @@
-The Name of Foo Module
-======================
+# chartcss
+ChartCSS
+========
 
-Foo project enables you to do bar. The first paragraph of this file should be
-kept short as it will be used as the project summary on backdropcms.org. Aim for
-about 240 characters (three lines at 80 characters each).
+Simple module to add the Chart.css framework for data visualisation and turn
+data into beautiful charts and graphs using simple CSS classes.
 
-All lines in this file should be no more than 80 characters long for legibility,
-unless including a URL or example that requires the line not wrap. (The first
-line of this paragraph is 80 characters for reference.)
-
-Detail in READMEs should be limited to the minimum required for installation and
-getting started. More detailed documentation should be moved to a GitHub wiki
-page: https://github.com/backdrop-contrib/setup/wiki/Documentation.
-
+This module uses the chartCSS framework on github https://github.com/ChartsCSS/charts.css
 
 Requirements
-------------
-
-This module requires that the following modules are also enabled:
-
- * [Bar](https://github.com/backdrop-contrib/bar)
- * [Baz](https://github.com/backdrop-contrib/baz)
+No dependencies.
 
 Installation
-------------
+Install this module using the official Backdrop CMS instructions at https://docs.backdropcms.org/documentation/extend-with-modules.
 
-- Install this module using the official Backdrop CMS instructions at
-  https://docs.backdropcms.org/documentation/extend-with-modules.
-
-- Visit the configuration page under Administration > Configuration > Category >
-  Foo (admin/config/category/foo) and enter the required information.
-
-- Any additional steps.
+Visit the configuration page under Administration > ChartCSS (/admin/chartcss).
 
 Documentation
--------------
-
-Additional documentation is located in the Wiki:
-https://github.com/backdrop-contrib/foo-project/wiki/Documentation.
+Additional documentation is located in the Wiki: https://github.com/backdrop-contrib/chartcss/wiki/Documentation.
 
 Issues
-------
-
-Bugs and Feature requests should be reported in the Issue Queue:
-https://github.com/backdrop-contrib/foo-project/issues.
+Bugs and Feature requests should be reported in the Issue Queue: https://github.com/backdrop-contrib/chartcss/issues.
 
 Current Maintainers
--------------------
-
-- [Chris Brown](https://github.com/username).
-- [Pat Smith](https://github.com/username).
+- [Steve Moorhouse (albanycomputers)] (https://github.com/albanycomputers)
 - Seeking additional maintainers.
 
 Credits
--------
+- Backdrop CMS Module created by Stephen Moorhouse.
 
-- Ported to Backdrop CMS by [Alex Baker](https://github.com/username).
-- Originally written for Drupal by [Taylor Young](https://github.com/username).
-- Based on the [MagicalCode project](https://github.com/example).
-- Sponsored by [TechNoCorp](https://example.com)
+- Chart.CSS creator Rammiy (https://github.com/ramiy)
+- Chart.CSS Github respoitory (https://github.com/ChartsCSS/charts.css)
+
+Sponsorship:
+ - [Albany Computer Services] (https://www.albany-computers.co.uk)
 
 License
--------
-
-This project is GPL v2 software.
-See the LICENSE.txt file in this directory for complete text.
-
+This project is GPL v2 software. See the LICENSE.txt file in this directory for complete text.
