@@ -1,4 +1,4 @@
-ChartCSS
+# ChartCSS
 
 Simple module to add the Chart.css framework for data visualisation and turn
 data into beautiful charts and graphs using simple CSS classes.
