@@ -6,7 +6,7 @@ simple CSS classes.
 
 ### ***Please note that this CSS framework can not do calculations so will not format charts generated from Views.***
 
-You will need to add the calculation to the ***<td style=... >*** tag in order to
+You will need to add the calculation to the 'td style=' tag in order to
 tell the framework how to display the data. To minimize logarithmic errors,
 the best practice is to calculation using CSS calc() function.
 
