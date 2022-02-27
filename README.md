@@ -17,7 +17,8 @@ For example...
   .  </tr>
   .  <tr>
   .    <td style="--size: calc( 60 / 100 )"> $60K </td>
-  .  </tr>```
+  .  </tr>
+  ```
 
 This module uses the chartsCSS framework on github https://github.com/ChartsCSS/charts.css
 
