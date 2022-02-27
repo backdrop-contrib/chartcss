@@ -9,19 +9,114 @@ function chartcss_preprocess(&$vars, $hook) {
    backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
 }
 
+function chartcss_preprocess_html(&$variables) {
+  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
+}
+
 /**
  * Implements hook_menu().
  */
 function chartcss_menu() {
-  $items['chartcss'] = array(
-    'title' => 'ChartCSS Help',
-    'description' => 'Help for ChartCSS framework',
-    'page callback' => '/admin/chartcss',
-    'access callback' => TRUE,
+  $items = array();
+
+  // Chart CSS help menu.
+  $items['admin/config/content/chartcss'] = array(
+    'title'             => 'Chart CSS',
+    'page callback'     => 'backdrop_get_form',
+    'page arguments'    => array('chartcss_help_menu'),
+    'access callback'   => 'user_access',
+    'access arguments'  => array('administer chartcss'),
+    'description'       => 'Help for Chart CSS.',
   );
+
+  $items['admin/config/content/chartcss/help'] = array(
+    'title'             => 'Chart CSS Help',
+    'page callback'     => 'chartcss_help',
+    'access callback'   => 'user_access',
+    'access arguments'  => array('administer chartcss'),
+    'description'       => 'Chart CSS help.',
+  );
+  
   return $items;
 }
 
-function chartcss_preprocess_html(&$variables) {
-  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
+/**
+ * Displays main Chart CSS help page.
+ */
+function chartcss_help_menu() {
+  $menu = menu_get_item('admin/config/content/chartcss');
+  $content = system_admin_menu_block($menu);
+
+  $build['menu'] = array(
+    '#theme' => 'admin_block_content',
+    '#content' => $content,
+    '#weight' => 5,
+  );
+
+  return $build;
+}
+
+/**
+ * Displays simple help on administration menu.
+ */
+function chartcss_help() {
+
+  $html = t('
+  
+  <p>Simple module to add the Charts.css framework for data visualisation to <b><i>inline</i></b> content and turn data into beautiful charts and graphs using simple CSS classes.</p>
+<p><b><i>Please note that this CSS framework can not do calculations so will not format charts generated from Views.</i></b></p>
+<p>You will need to add the calculation to the <td=style=... > tag in order to tell the framework how to display the data. To minimize logarithmic errors, the best practice is to calculation using CSS calc() function.</p>
+  <p>For a comprehensive guide to using the Charts CSS framework please visit the website for the creator of the framework.</p>
+  <a href="https://chartscss.org/components/data/" target="_blank">www.chartscss.org/components/data</a><br>
+  <br>
+  <div style="background-color:rgba(200,200,200,30%);padding:1em;max-width:800px;">
+  <p>Example table before Charts CSS framework is added.</p>
+  <table>
+  <caption> Front End Developer Salary </caption>
+<tbody>
+<tr>
+  <td> $40K </td>
+</tr>
+<tr>
+  <td> $60K </td>
+</tr>
+<tr>
+  <td> $75K </td>
+</tr>
+<tr>
+  <td> $90K </td>
+</tr>
+<tr>
+  <td> $100K </td>
+</tr>
+</tbody>
+  </table>
+<br><hr><br>
+<p>This is what the table looks like as a bar chart.</p>  
+<table style="height: 200px;max-width: 300px;margin: 0 auto;" class="charts-css column multiple hide-data show-primary-axis show-data-axes">
+<caption> Front End Developer Salary </caption>
+  <tbody>
+    <tr>
+      <td style="--size: calc( 40 / 100 )"> $40K </td>
+    </tr>
+    <tr>
+      <td style="--size: calc( 60 / 100 )"> $60K </td>
+    </tr>
+    <tr>
+      <td style="--size: calc( 75 / 100 )"> $75K </td>
+    </tr>
+    <tr>
+      <td style="--size: calc( 90 / 100 )"> $90K </td>
+    </tr>
+    <tr>
+      <td style="--size: calc( 100 / 100 )"> $100K </td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+ ');
+    
+  return array(
+    '#markup' => $html,
+  );
 }

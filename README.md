@@ -1,9 +1,26 @@
 # ChartCSS
 
-Simple module to add the Chart.css framework for data visualisation and turn
-data into beautiful charts and graphs using simple CSS classes.
+Simple module to add the Charts.css framework for data visualisation to
+inline content and turn data into beautiful charts and graphs using
+simple CSS classes.
 
-This module uses the chartCSS framework on github https://github.com/ChartsCSS/charts.css
+### ***Please note that this CSS framework can not do calculations so will***
+### ***not format charts generated from Views.***
+
+You will need to add the calculation to the <td=style=... > tag in order to
+tell the framework how to display the data. To minimize logarithmic errors,
+the best practice is to calculation using CSS calc() function.
+
+For example...
+  .<tbody>
+  .  <tr>
+  .    <td style="--size: calc( 40 / 100 )"> $40K </td>
+  .  </tr>
+  .  <tr>
+  .    <td style="--size: calc( 60 / 100 )"> $60K </td>
+  .  </tr>
+
+This module uses the chartsCSS framework on github https://github.com/ChartsCSS/charts.css
 
 ## Requirements:
 No dependencies.
