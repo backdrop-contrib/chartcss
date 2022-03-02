@@ -4,13 +4,12 @@
  * Easily create charts and graphs with a CSS framework.
  */
 
-function chartcss_preprocess(&$vars, $hook) {    
-  if($hook == 'page')    
+ /**
+ * Implements hook_preprocess().
+ */
+function chartcss_preprocess(&$vars, $hook) {
+  if($hook == 'page')
    backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
-}
-
-function chartcss_preprocess_html(&$variables) {
-  backdrop_add_css(backdrop_get_path('module', 'chartcss') .'/css/charts.min.css');
 }
 
 /**
@@ -62,7 +61,6 @@ function chartcss_help_menu() {
 function chartcss_help() {
 
   $html = t('
-  
   <p>Simple module to add the Charts.css framework for data visualisation to <b><i>inline</i></b> content and turn data into beautiful charts and graphs using simple CSS classes.</p>
 <p><b><i>Please note that this CSS framework can not do calculations so will not format charts generated from Views.</i></b></p>
 <p>You will need to add the calculation to the <td=style=... > tag in order to tell the framework how to display the data. To minimize logarithmic errors, the best practice is to calculation using CSS calc() function.</p>
@@ -92,7 +90,7 @@ function chartcss_help() {
 </tbody>
   </table>
 <br><hr><br>
-<p>This is what the table looks like as a bar chart.</p>  
+<p>This is what the table looks like as a bar chart.</p>
 <table style="height: 200px;max-width: 300px;margin: 0 auto;" class="charts-css column multiple hide-data show-primary-axis show-data-axes">
 <caption> Front End Developer Salary </caption>
   <tbody>
@@ -115,7 +113,7 @@ function chartcss_help() {
   </table>
   </div>
  ');
-    
+ 
   return array(
     '#markup' => $html,
   );
