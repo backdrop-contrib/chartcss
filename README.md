@@ -20,6 +20,8 @@ For example...
   .  </tr>
   ```
 
+### [todo] create Views module intergration so ChartsCSS can be used with dynamic data.
+
 ### See the menu ***/admin/config/content/chartcss/help*** for links to the Framework and an example.
 
 This module uses the chartsCSS framework on github https://github.com/ChartsCSS/charts.css
