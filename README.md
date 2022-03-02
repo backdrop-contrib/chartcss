@@ -6,6 +6,8 @@ simple CSS classes.
 
 ### ***Please note that this CSS framework can not do calculations so will not format charts generated from Views.***
 
+### [todo] create Views module intergration so ChartsCSS can be used with dynamic data.
+
 You will need to add the calculation to the 'td style=' tag in order to
 tell the framework how to display the data. To minimize logarithmic errors,
 the best practice is to calculation using CSS calc() function.
@@ -19,9 +21,6 @@ For example...
   .    <td style="--size: calc( 60 / 100 )"> $60K </td>
   .  </tr>
   ```
-
-### [todo] create Views module intergration so ChartsCSS can be used with dynamic data.
-
 ### See the menu ***/admin/config/content/chartcss/help*** for links to the Framework and an example.
 
 This module uses the chartsCSS framework on github https://github.com/ChartsCSS/charts.css
